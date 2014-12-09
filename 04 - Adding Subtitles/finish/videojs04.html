@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    <script src="../../video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf"";
+    </script>
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    <video 
+           id="myVideoPlayer" 
+           preload="auto" 
+           controls 
+           data-setup='{"example_option":true}'
+           poster="../../videos/oceans.png"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           width="640" height="264">
+        <source src="../../videos/oceans.mp4" type='video/mp4' />
+        <source src="../../videos/oceans.webm" type='video/webm' />
+        <source src="../../videos/oceans.ogv" type='video/ogg' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        <track kind="captions" src="../../videos/captions.vtt.txt" srclang="en" label="English" default></track>
+        <track kind="captions" src="../../videos/captions.french.vtt.txt" srclang="fr" label="French"></track>
+    </video>
+</body>
+</html>
+
+
+<!--
+
+Adding Subtitles to your Video track is also easy.
+<track kind="captions" src="../../videos/captions.vtt.txt" srclang="en" label="English" default></track>
+
+Needs to be originating from same location else CORS needs to be applied.
+
+You can have N number of tracks and have a default track loaded with default keyword.
+
+kind
+
+One of the five track types listed above. Kind defaults to subtitles if no kind is included.
+
+label
+
+The label for the track that will be show to the user, for example in a menu that list the different languages available for subtitles.
+
+default
+
+The default attribute can be used to have a track default to showing. Otherwise the viewer would need to select their language from the captions or subtitles menu. NOTE: For chapters, default is required if you want the chapters menu to show.
+
+srclang
+
+The two-letter code (valid BCP 47 language tag) for the language of the text track, for example "en" for English. Here's a list of available language codes.
+
+-->

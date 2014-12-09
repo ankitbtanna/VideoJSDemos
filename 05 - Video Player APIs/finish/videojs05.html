@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    <script src="../../video-js/video.js"></script>
+    <script src="../../libs/jquery.js"></script>
+    <script>
+        var myVideoPlayerObject;
+        $(document).ready(function(e){
+            myVideoPlayerObject = videojs('myVideoPlayer');
+            
+            // Auto Plays the Video
+            // myVideoPlayerObject.play();
+            // myVideoPlayerObject.autoplay(true);
+             myVideoPlayerObject.dimensions(1024, 768);
+            myVideoPlayerObject.load();
+            
+            // Fire and event manually
+            /* myComponent.trigger('eventName'); */
+            // myComponent.trigger('ended');
+            
+            // Adding events
+            myVideoPlayerObject.on("ended", function(){ 
+            alert('Video has ended');
+            });
+        });
+        
+    </script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf"";
+    </script>
+    
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    <video 
+           id="myVideoPlayer" 
+           preload="auto" 
+           controls 
+           data-setup='{"example_option":true}'
+           poster="../../videos/oceans.png"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           width="640" height="264">
+        <source src="../../videos/oceans.mp4" type='video/mp4' />
+        <source src="../../videos/oceans.webm" type='video/webm' />
+        <source src="../../videos/oceans.ogv" type='video/ogg' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        <track kind="captions" src="../../videos/captions.vtt.txt" srclang="en" label="English" default></track>
+        <track kind="captions" src="../../videos/captions.french.vtt.txt" srclang="fr" label="French"></track>
+    </video>
+</body>
+</html>
+
+
+<!--
+
+What if you want to access Video or HTML5 Media APIs using javascript.
+
+get the video player object assigned in a variable.
+
+Rest of APIs are accessible and are same as HTML5 Media API.
+https://github.com/videojs/video.js/blob/stable/docs/api/vjs.Player.md
+https://html.spec.whatwg.org/multipage/embedded-content.html#the-video-element
+
+
+Media APIs are really helpful to reduce memory footprint and take advantage in complex business logics.
+
+Lots of events
+durationchange EVENT
+
+Fired when the duration of the media resource is first known or changed
+defined in: src/js/player.js#L554
+
+ended EVENT
+
+Fired when the end of the media resource is reached (currentTime == duration)
+defined in: src/js/player.js#L541
+
+firstplay EVENT
+
+Fired the first time a video is played
+
+Not part of the HLS spec, and we're not sure if this is the best implementation yet, so use sparingly. If you don't have a reason to prevent playback, use myPlayer.one('play'); instead.
+defined in: src/js/player.js#L498
+
+fullscreenchange EVENT
+
+Fired when the player switches in or out of fullscreen mode
+defined in: src/js/player.js#L583
+
+loadedalldata EVENT
+
+Fired when the player has finished downloading the source data
+defined in: src/js/player.js#L445
+
+loadeddata EVENT
+
+Fired when the player has downloaded data at the current playback position
+defined in: src/js/player.js#L439
+
+loadedmetadata EVENT
+
+Fired when the player has initial duration and dimension information
+defined in: src/js/player.js#L433
+
+loadstart EVENT
+
+Fired when the user agent begins looking for media data
+defined in: src/js/player.js#L389
+
+pause EVENT
+
+Fired whenever the media has been paused
+defined in: src/js/player.js#L512
+
+play EVENT
+
+Fired whenever the media begins or resumes playback
+defined in: src/js/player.js#L451
+
+progress EVENT
+
+Fired while the user agent is downloading media data
+defined in: src/js/player.js#L530
+
+resize EVENT
+
+Fired when the width and/or height of the component changes
+inherited from: src/js/component.js#L1020
+
+seeked EVENT
+
+Fired when the player has finished jumping to a new time
+defined in: src/js/player.js#L485
+
+seeking EVENT
+
+Fired whenever the player is jumping to a new time
+defined in: src/js/player.js#L477
+
+timeupdate EVENT
+
+Fired when the current playback position has changed
+
+During playback this is fired every 15-250 milliseconds, depending on the playback technology in use.
+defined in: src/js/player.js#L524
+
+volumechange EVENT
+
+Fired when the volume changes
+defined in: src/js/player.js#L577
+
+waiting EVENT
+
+Fired whenever the media begins waiting
+defined in: src/js/player.js#L460
+-->

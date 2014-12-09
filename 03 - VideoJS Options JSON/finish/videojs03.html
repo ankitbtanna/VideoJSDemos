@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    <script src="../../video-js/video.js"></script>
+    <script src="../../libs/jquery.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf"";
+    </script>
+    
+    <script>
+        var myVideoPlayerGeneratedHTML = "";
+        myVideoPlayerGeneratedHTML += '<video '; 
+        myVideoPlayerGeneratedHTML += 'id="myVideoPlayer2" ';
+        myVideoPlayerGeneratedHTML += 'preload="auto" ';
+        myVideoPlayerGeneratedHTML += 'controls ';
+        myVideoPlayerGeneratedHTML += 'poster="../../videos/oceans.png" ';
+        myVideoPlayerGeneratedHTML += 'class="myVideoPlayersOnThePage video-js vjs-default-skin vjs-big-play-centered" ';
+        myVideoPlayerGeneratedHTML += 'width="640" height="264">';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.mp4" type="video/mp4"/>';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.webm" type="video/webm"/>';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.ogv" type="video/ogg"/>';
+        myVideoPlayerGeneratedHTML += '<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>';
+        myVideoPlayerGeneratedHTML += '</video>';
+        
+        
+        $(document).ready(function(e){
+            $('#myVideoPlayerDiv').html(myVideoPlayerGeneratedHTML);
+            
+            // Dynamically Created Tag initiated with Options JSON
+            videojs("myVideoPlayer2", {"controls": true, "autoplay": true, "preload": "auto","children": { "controlBar": { "children": { "muteToggle": false } } }}, function(){
+                console.log("applied VJS");
+            });
+            
+        });
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    <h3>Video JS Options Demo</h3>
+    <p>Options</p>
+    <video 
+           id="myVideoPlayer"
+           data-setup='{"controls": true, "autoplay": true, "preload": "auto"}'
+           poster="../../videos/oceans.png"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           width="640" height="264">
+        <source src="../../videos/oceans.mp4" type='video/mp4' />
+        <source src="../../videos/oceans.webm" type='video/webm' />
+        <source src="../../videos/oceans.ogv" type='video/ogg' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    
+    </video>
+    
+    
+    <br/>
+    <div id="myVideoPlayerDiv"></div>
+</body>
+</html>
+
+
+<!--
+
+There are a lot of options to take advantage of the video tag addributes
+
+These options need to be written in JSON format. MAny of these options can be replaced by video tags.
+
+Like controls, autoplay, preload
+data-setup='{"controls": true, "autoplay": true, "preload": "auto"}'
+
+Same applies to dynamically generated video tags
+Example Code: // Dynamically Created Tag initiated with Options JSON
+videojs("example_video_1", { "controls": true, "autoplay": false, "preload": "auto" });
+
+<video controls ...>
+or
+{ "controls": true }
+
+
+<video autoplay ...>
+or
+{ "autoplay": true }
+
+
+<video poster="myPoster.jpg" ...>
+or
+{ "poster": "myPoster.jpg" }
+
+<video loop ...>
+or
+{ "loop": "true" }
+
+<video width="640" ...>
+or
+{ "width": 640 }
+
+You can go deep into component level of the video player.
+
+Video Player > Control Bar > Mute Button
+{"controls": true, "autoplay": true, "preload": "auto","children": { "controlBar": { "children": { "muteToggle": false } } }}
+
+This is how the Player is structured
+Player
+    PosterImage
+    TextTrackDisplay
+    LoadingSpinner
+    BigPlayButton
+    ControlBar
+        PlayToggle
+        FullscreenToggle
+        CurrentTimeDisplay
+        TimeDivider
+        DurationDisplay
+        RemainingTimeDisplay
+        ProgressControl
+            SeekBar
+              LoadProgressBar
+              PlayProgressBar
+              SeekHandle
+        VolumeControl
+            VolumeBar
+                VolumeLevel
+                VolumeHandle
+        MuteToggle
+
+-->

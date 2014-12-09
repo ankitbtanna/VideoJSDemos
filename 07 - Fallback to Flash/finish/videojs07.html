@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    <script src="../../video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf"";
+    </script>
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    <video 
+           id="myVideoPlayer" 
+           preload="auto" 
+           controls 
+           data-setup='{"techOrder": ["flash", "other supported tech"]}'
+           poster="../../videos/oceans.png"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           width="640" height="264">
+        <source src="../../videos/oceans.mp4" type='video/mp4' />
+        <source src="../../videos/oceans.webm" type='video/webm' />
+        <source src="../../videos/oceans.ogv" type='video/ogg' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    
+    </video>
+</body>
+</html>
+
+
+<!--
+
+This is a really nice feature.
+
+Nice to have other technologies available for your video to be played.
+
+HTML5 > Flash > QuickTime > Silverlight
+
+Just in case browser does not support 1 you have other players
+
+We have here flash player available.
+
+Requires these methods
+canPlayType play pause currentTime volume duration buffered supportsFullScreen
+
+Required Events
+loadstart play pause playing ended volumechange durationchange error
+
+Here I am requesting Flash to be first preference
+"techOrder": ["flash", "other supported tech"]
+But ideally it should be like this
+"techOrder": ["html5", "flash", "other supported tech"]
+
+-->

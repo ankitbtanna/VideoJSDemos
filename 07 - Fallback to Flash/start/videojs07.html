@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    <script src="../../video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf"";
+    </script>
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    <video 
+           id="myVideoPlayer" 
+           preload="auto" 
+           controls 
+           data-setup='{"example_option":true}'
+           poster="../../videos/oceans.png"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           width="640" height="264">
+        <source src="../../videos/oceans.mp4" type='video/mp4' />
+        <source src="../../videos/oceans.webm" type='video/webm' />
+        <source src="../../videos/oceans.ogv" type='video/ogg' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    
+    </video>
+</body>
+</html>
+
+
+<!--
+
+
+
+-->

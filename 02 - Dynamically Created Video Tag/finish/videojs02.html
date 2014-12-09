@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    
+    <script src="../../libs/jquery.js"></script>
+    <script src="../../video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf";
+    </script>
+    
+    <script>
+        var myVideoPlayerGeneratedHTML = "";
+        myVideoPlayerGeneratedHTML += '<video '; 
+        myVideoPlayerGeneratedHTML += 'id="myVideoPlayer" ';
+        myVideoPlayerGeneratedHTML += 'preload="auto" ';
+        myVideoPlayerGeneratedHTML += 'controls ';
+        myVideoPlayerGeneratedHTML += 'poster="../../videos/oceans.png" ';
+        myVideoPlayerGeneratedHTML += 'class="myVideoPlayersOnThePage video-js vjs-default-skin vjs-big-play-centered" ';
+        myVideoPlayerGeneratedHTML += 'width="640" height="264">';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.mp4" type="video/mp4"/>';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.webm" type="video/webm"/>';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.ogv" type="video/ogg"/>';
+        myVideoPlayerGeneratedHTML += '<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>';
+        myVideoPlayerGeneratedHTML += '</video>';
+        
+        
+        $(document).ready(function(e){
+            $('#myVideoPlayerDiv').html(myVideoPlayerGeneratedHTML);
+            
+            /*$('#myVideoPlayerDiv1').html(myVideoPlayerGeneratedHTML);
+            $('#myVideoPlayerDiv2').html(myVideoPlayerGeneratedHTML);
+            $('#myVideoPlayerDiv3').html(myVideoPlayerGeneratedHTML); */
+            
+            
+            /* For Dynamically Generated Video Tags */
+            videojs("myVideoPlayer", {}, function(){
+                console.log("applied VJS");
+            });
+            
+            
+        });
+        
+    </script>
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    
+    <div id="myVideoPlayerDiv"></div>
+    
+</body>
+</html>
+
+
+<!--
+
+Some times the Video Tag might have been created dynamically
+So rather than relying on the data-setup attribute we can manually invoke VideoJS over the video element once it is pushed into the DOM.
+
+So first you remove the data-setup attribute.
+
+The first argument in the videojs function is the ID of your video tag. 
+
+The second argument is an options object. It allows you to set additional options like you can with the data-setup attribute.
+
+The third argument is a 'ready' callback. Once Video.js has initialized it will call this function.
+
+
+
+-->

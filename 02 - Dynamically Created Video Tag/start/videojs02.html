@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    
+    <script src="../../libs/jquery.js"></script>
+    <script src="../../video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf";
+    </script>
+    
+    <script>
+        var myVideoPlayerGeneratedHTML = "";
+        myVideoPlayerGeneratedHTML += '<video '; 
+        myVideoPlayerGeneratedHTML += 'id="myVideoPlayer" ';
+        myVideoPlayerGeneratedHTML += 'preload="auto" ';
+        myVideoPlayerGeneratedHTML += 'controls ';
+        myVideoPlayerGeneratedHTML += 'poster="../../videos/oceans.png" ';
+        myVideoPlayerGeneratedHTML += 'class="video-js vjs-default-skin vjs-big-play-centered" ';
+        myVideoPlayerGeneratedHTML += 'width="640" height="264">';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.mp4" type="video/mp4"/>';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.webm" type="video/webm"/>';
+        myVideoPlayerGeneratedHTML += '<source src="../../videos/oceans.ogv" type="video/ogg"/>';
+        myVideoPlayerGeneratedHTML += '<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>';
+        myVideoPlayerGeneratedHTML += '</video>';
+        
+        
+        $(document).ready(function(e){
+            $('#myVideoPlayerDiv').html(myVideoPlayerGeneratedHTML);
+        });
+        
+    </script>
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    
+    <div id="myVideoPlayerDiv"></div>
+    
+    
+    
+</body>
+</html>
+
+
+<!--
+
+Some times the Video Tag might have been created dynamically
+So rather than relying on the data-setup attribute we can manually invoke VideoJS over the video element once it is pushed into the DOM.
+
+So first you remove the data-setup attribute.
+
+Now if you see it appears as a normal video tag
+
+
+
+
+-->

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video JS Demos</title>
+    <link rel="stylesheet" href="../../video-js/video-js.css"/>
+    <script src="../../video-js/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../../video-js/video-js.swf"";
+    </script>
+</head>
+<body>
+    <h3>Video JS Demo</h3>
+    <p>Very Easy to Set Up</p>
+    <video 
+           id="myVideoPlayer" 
+           preload="auto" 
+           controls 
+           data-setup='{"example_option":true}'
+           poster="../../videos/oceans.png"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           width="640" height="264">
+        <source src="../../videos/oceans.mp4" type='video/mp4' />
+        <source src="../../videos/oceans.webm" type='video/webm' />
+        <source src="../../videos/oceans.ogv" type='video/ogg' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    
+    </video>
+</body>
+</html>
+
+
+<!--
+
+Very Easy to setup.
+
+Need to add CSS and JS
+
+JavaScript and CSS library
+
+work with and build on HTML5 video
+
+also known as an HTML5 Video Player.
+
+common controls skin built in HTML/CSS
+
+fixes cross-browser inconsistencies
+
+features like fullscreen and subtitles
+
+allback to Flash or other playback technologies
+
+consistent JavaScript API for interacting with the video.
+
+HTML is the markup language that makes up every page on the web. The newest version, HTML5, includes specifications for a <video> tag, that's meant to allow web developers to add a video to a page in the same way they would add an image. In order for this to work, web browser developers have built video playback functionality into their browsers.
+
+standardizing video playback across web browsers 
+
+one method for embedding a video
+
+as well as providing one consistent JavaScript API for both HTML5, Flash, and other playback technologies.
+
+but Video.js includes an 'HTML5 Shiv', which needs to be in the head for older IE versions to respect the video tag as a valid element.
+
+Easy to import
+<link href="//vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/4.10/video.js"></script>
+
+Add an HTML5 video tag to your page.
+
+With Video.js you just use an HTML5 video tag to embed a video. Video.js will then read the tag and make it work in all browsers, not just ones that support HTML5 video. Beyond the basic markup, Video.js needs a few extra pieces.
+
+'data-setup' Attribute tells Video.js to automatically set up the video when the page is ready
+can read data in JSON format
+
+give class, data-setup, id
+
+data-setup='{"example_option":true}' 
+class="video-js vjs-default-skin"
+id="myVideoPlayer"
+
+big play button is located in the upper left hand corner
+vjs-big-play-centered - to make it centered
+
+video-js -- To initialize the library,
+vjs-default-skin -- To initialize the skins over video tag
+
+-->
